@@ -1,0 +1,14 @@
+
+.footerContainer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #3066BE;
+    color: white;
+}
+
+.footerEl{
+    padding:10px 0
+}
