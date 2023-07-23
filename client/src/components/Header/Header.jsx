@@ -9,7 +9,7 @@ const Header = () => {
                     <Link className={styles.headerEl} to="/">Home</Link>
                 </li>
                 <li>
-                    <Link className={styles.headerEl} to="/browse">Browse</Link>
+                    <Link className={styles.headerEl} to="/browse">Ministries</Link>
                 </li>
                 <li>
                     <Link className={styles.headerEl} to="/contact">Contact</Link>

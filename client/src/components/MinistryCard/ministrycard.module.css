@@ -1,6 +1,35 @@
-
+.cardContainer{
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(238, 238, 238);
+}
 
 .cardTitle{
     font-size: 20px;
     color: black;
+}
+
+.imgContainer{
+    overflow: hidden
+}
+
+.cardText{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ministryImg{
+    width: 100%;
+    object-fit: cover;
+    height: 250px;
+}
+
+.ministryName{
+    font-size: 25px;
+}
+
+.denomination{
+    font-size: 20px;
 }

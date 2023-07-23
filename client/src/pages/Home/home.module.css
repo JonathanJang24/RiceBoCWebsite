@@ -1,0 +1,66 @@
+
+.welcomeText{
+    margin: 150px auto;
+    padding: 0 200px;
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    font-size: 40px;
+    color: #414073;
+    transition: transform .5s ease-out;
+    text-align: center;
+}
+
+.welcomeText:hover{
+    transform: scale(105%);
+}
+
+
+.homeVideoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 50px 0;
+    gap: 60px;
+}
+
+.videoLabel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:340px;
+    height:fit-content;
+    text-align: left;
+    background-color: #7180B9;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    position: relative
+}
+
+
+.videoLabel span{
+    font-size: 32px;
+}
+
+.ls{
+    animation: slideLeft .75s ease-out;
+}
+
+.diss{
+    opacity: 0%
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        left: -300px
+    }
+
+    to {
+        left: 0;
+        opacity: 100%;
+    }
+}

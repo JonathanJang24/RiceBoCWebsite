@@ -6,24 +6,27 @@ import MinistryCard from '../../components/MinistryCard/MinistryCard'
 const Browse = () => {
 
     const ministryList = [
-        {'title':'RUF'},
-        {'title':'BSM'},
-        {'title':"CRU"}
+        {'title':'RUF','denomination':'PCA'},
+        {'title':'BSM','denomination':'SBC'},
+        {'title':"CRU",'denomination':'Non-denom'}
     ]
-    console.log(ministryList)
+
     return (
         <div>
             <Banner
-                title="Browse"
+                title="Ministries"
                 subtitle="View ministries on campus"
                 photo={BrowseImg}
             />
-            {ministryList.map((ministry) => (
-                <MinistryCard
-                    key={ministry.title}
-                    name={ministry.title}
-                />
-            ))}
+            <div className={styles.ministryContainer}>
+                {ministryList.map((ministry) => (
+                    <MinistryCard
+                        key={ministry.title}
+                        name={ministry.title}
+                        denomination={ministry.denomination}
+                    />
+                ))}
+            </div>
         </div>
         
     )

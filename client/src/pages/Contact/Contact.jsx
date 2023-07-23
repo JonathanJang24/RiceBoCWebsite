@@ -1,7 +1,15 @@
+import ContactImg from '../../common/images/contact-page-image.jpg'
+import Banner from '../../components/Banner/Banner'
 
 const Contact = () => {
     return (
-        <h1>Contact</h1>
+        <div>
+            <Banner
+                title="Contact"
+                subtitle="Reach out to us!"
+                photo={ContactImg}
+            />
+        </div>
     )
 }
 
