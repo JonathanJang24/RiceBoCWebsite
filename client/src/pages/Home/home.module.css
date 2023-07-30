@@ -15,7 +15,6 @@
     transform: scale(105%);
 }
 
-
 .homeVideoContainer{
     display: flex;
     align-items: center;
@@ -41,7 +40,7 @@
 }
 
 
-.videoLabel span{
+.videoLabel .vidDesc{
     font-size: 32px;
 }
 

@@ -1,0 +1,30 @@
+.description{
+    font-size: 24px;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto 100px auto;
+}
+
+.sectionTitle{
+    font-size: 48px;
+    text-align: center;
+    margin: 25px;
+}
+
+.eventContainer{
+    margin: 0 0 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px
+}
+
+.peopleContainer{
+    margin: 0 0 100px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px
+}

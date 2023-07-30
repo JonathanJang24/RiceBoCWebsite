@@ -1,0 +1,23 @@
+
+.cardContainer{
+    display: flex;
+    height: 250px;
+    width: 250px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #DCE2C8;
+    color: #03045E;
+    font-size: 20px;
+    transition: transform .5s ease-out;
+    border-radius: 20px;
+}
+
+.cardContainer:hover{
+    transform: scale(105%);
+}
+
+.eventName{
+    font-weight: bold;
+    font-size: 24px;
+}

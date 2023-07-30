@@ -34,7 +34,7 @@ const Home = () => {
 
             <div className={styles.homeVideoContainer}>
                 <div ref={videoLabelRef} className={classNames(styles.videoLabel, vLabelVis ? styles.ls : styles.diss)}>
-                    <span>Christians worshipping together at Ray's Courtyard during dead days, 2023</span>
+                    <span className={styles.vidDesc}>Christians worshipping together at Ray's Courtyard during dead days, 2023</span>
                 </div>
                 <YoutubeEmbed
                     embedId={'mqLDKcFIxXs'}

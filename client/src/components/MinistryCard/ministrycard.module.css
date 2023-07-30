@@ -4,6 +4,9 @@
     border-radius: 10px;
     background-color: rgb(238, 238, 238);
 }
+.cardContainer:hover{
+    cursor: pointer;
+}
 
 .cardTitle{
     font-size: 20px;

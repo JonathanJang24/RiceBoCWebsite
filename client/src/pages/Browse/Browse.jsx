@@ -6,9 +6,9 @@ import MinistryCard from '../../components/MinistryCard/MinistryCard'
 const Browse = () => {
 
     const ministryList = [
-        {'title':'RUF','denomination':'PCA'},
-        {'title':'BSM','denomination':'SBC'},
-        {'title':"CRU",'denomination':'Non-denom'}
+        {'title':'RUF','denomination':'PCA',id:1},
+        {'title':'BSM','denomination':'SBC',id:2},
+        {'title':"CRU",'denomination':'Non-denom',id:3}
     ]
 
     return (
@@ -21,8 +21,9 @@ const Browse = () => {
             <div className={styles.ministryContainer}>
                 {ministryList.map((ministry) => (
                     <MinistryCard
-                        key={ministry.title}
+                        key={ministry.id}
                         name={ministry.title}
+                        bannerImg={BrowseImg}
                         denomination={ministry.denomination}
                     />
                 ))}
