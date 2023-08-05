@@ -1,4 +1,11 @@
 
+.container{
+    text-align: center;
+    margin: 100px auto 50px auto;
+    font-size: 32px;
+    width: 70%
+}
+
 .formContainer{
     display: flex;
     align-items: center;

@@ -18,6 +18,12 @@ const Contact = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log(formData)
+        fetch('https://script.google.com/macros/s/AKfycbzhHKbBxCAXFnQr6S7rDfoxJFSZmc9t4ymCCg9JH90flS4qXMTd9_UVRkVdqVUNhVvB/exec',{
+            method:'POST'
+        }).then(response => {
+            setFormData({'name':'','email':'','subject':'','description':''})
+            return response.json()
+        })
     }
 
     return (
@@ -27,6 +33,10 @@ const Contact = () => {
                 subtitle="Reach out to us!"
                 photo={ContactImg}
             />
+
+            <div className={styles.container}>
+                Any questions, comments, or concerns? Anything the site could improve on? Any bugs or errors? Fill out the form to contact JJ! He will try to get back to you as soon as possible :)
+            </div>
 
             <div className={styles.formContainer}>
                 <form onSubmit={handleSubmit} className={styles.formStyle}>

@@ -21,6 +21,9 @@ const About = () => {
                 <p>We are <span className={styles.bolden}>not</span> a unitarian, pantheistic, or Christian universalist movement. There are core tenants of orthodoxy that people must adhere too in order to be considered Christian. There is exclusivity amongst God's people and a clear distinction between those within and outside of the Church, as well as those who have not yet been regenerated and saved. Though as Christians we strive to "...keep our conduct excellent among the Gentiles..." (1 Peter 2:12) we will politely decline relationship to groups we deem heretical.</p>
             </div>
 
+            <h1 className={styles.sectionTitle}>Who made this website?</h1>
+            <div className={styles.container}>This site was created by JJ (Jonathan Jang), an undergraduate at Rice University studying Computer Science. The website was made using React.JS</div>
+
             <div className={styles.container}>A special shoutout to those involved in the organizing and making of this whole idea:...</div>
 
         </div>  
