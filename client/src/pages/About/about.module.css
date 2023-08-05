@@ -1,0 +1,24 @@
+
+.container{
+    margin: 0 auto 100px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+    font-size: 25px;
+
+}
+
+.bolden{
+    font-weight: bold;
+}
+
+.sectionTitle{
+    font-size: 48px;
+    text-align: center;
+    margin: 100px auto 10px auto;
+    padding: 5px;
+    background: #8AE1FC ;
+    width: fit-content;
+}
