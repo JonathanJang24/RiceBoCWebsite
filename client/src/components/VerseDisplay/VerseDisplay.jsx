@@ -12,7 +12,6 @@ const VerseDisplay = (props) => {
         })
         .then(data => {
             setVerse(data)
-            console.log(data)
         })
     },[])
 
