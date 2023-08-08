@@ -17,7 +17,15 @@
 
 .bannerTitleSm{
     position: absolute;
-    top:350px;
+    top:340px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 999
+}
+
+.bannerTitleExSm{
+    position: absolute;
+    top:380px;
     font-size: 20px;
     z-index: 999
 }

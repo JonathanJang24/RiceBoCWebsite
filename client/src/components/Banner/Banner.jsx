@@ -6,6 +6,7 @@ const Banner = (props) => {
             <div className={styles.bannerTitles}>
                 <span className={styles.bannerTitleLg}>{props.title}</span>
                 <span className={styles.bannerTitleSm}>{props.subtitle}</span>
+                <span className={styles.bannerTitleExSm}>{props.optionalSubtitle}</span>
             </div>
             <img className={styles.bannerImg} src={props.photo} alt={props.title+" banner"}/>
         </div>

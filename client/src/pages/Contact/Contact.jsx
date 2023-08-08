@@ -9,7 +9,6 @@ const Contact = () => {
     const [formData, setFormData] = useState({'name':'','email':'','subject':'','description':''})
 
     const [btnText,setBtnTxt] = useState("Submit")
-    const [isLoading, setIsLoading] = useState(false)
 
     const handleChange = (event) => {
         const name = event.target.name
@@ -17,12 +16,12 @@ const Contact = () => {
         setFormData(values => ({...values,[name]:value}))
     }
 
-    const sheetUrl = "https://script.google.com/macros/s/AKfycbzhHKbBxCAXFnQr6S7rDfoxJFSZmc9t4ymCCg9JH90flS4qXMTd9_UVRkVdqVUNhVvB/exec"
+    const sheetUrl = "https://script.google.com/macros/s/AKfycbztwLUNYcbPpwLhjK4C_jdVUMGN4QMdY6bt2CYfCWry_N366LaXrP0qJ7TaXuN0T6Fd/exec"
 
     const handleSubmit = (event) => {
         event.preventDefault()
         setBtnTxt("Sending...")
-        setIsLoading(true)
+        console.log(formData)
         var form_data = new FormData();
         for ( var key in formData ) {
             form_data.append(key, formData[key]);
@@ -33,7 +32,6 @@ const Contact = () => {
         }).then(response => {
             setFormData({'name':'','email':'','subject':'','description':''})
             setBtnTxt("Submit")
-            setIsLoading(false) 
             return response.json()
         })
         

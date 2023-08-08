@@ -3,26 +3,31 @@ import Banner from '../../components/Banner/Banner'
 import BrowseImg from '../../common/images/browse-page-image.jpeg'
 import MinistryCard from '../../components/MinistryCard/MinistryCard'
 import { useEffect, useState } from 'react'
-import { API_KEY, SHEET_ID, SHEET_NAME } from '../../constants'
+import { API_KEY, SHEET_ID, BROWSE_SHEET } from '../../constants'
 
 const Browse = () => {
 
-
-    const ministryList = [
-        {'title':'RUF','denomination':'PCA',id:1},
-        {'title':'BSM','denomination':'SBC',id:2},
-        {'title':"CRU",'denomination':'Non-denom',id:3}
-    ]
-
-    const [ministries, setMinistries] = useState()
+    const [ministries, setMinistries] = useState([])
 
     useEffect(() => {
-
-
-        const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}?valueRenderOption=FORMATTED_VALUE&key=${API_KEY}`
+        const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${BROWSE_SHEET}!A2:Z1000?valueRenderOption=FORMATTED_VALUE&key=${API_KEY}`
         fetch(url)
         .then(response => {
-            console.log(response)
+            return response.json()
+        })
+        .then(data => {
+            const sheetData = data.values
+            const mappedData = []
+            for (var row in sheetData){
+                mappedData.push({
+                    id: sheetData[row][0],
+                    abbreviation: sheetData[row][1],
+                    title: sheetData[row][2],
+                    denomination: sheetData[row][3],
+                    image_url: sheetData[row][4]
+                })
+            }
+            setMinistries(mappedData)
         })
         .catch(err=> {
             console.log(err)
@@ -37,11 +42,12 @@ const Browse = () => {
                 photo={BrowseImg}
             />
             <div className={styles.ministryContainer}>
-                {ministryList.map((ministry) => (
+                {ministries.map((ministry) => (
                     <MinistryCard
                         key={ministry.id}
-                        name={ministry.title}
-                        bannerImg={BrowseImg}
+                        id={ministry.id}
+                        name={ministry.abbreviation}
+                        image={ministry.image_url}
                         denomination={ministry.denomination}
                     />
                 ))}

@@ -2,7 +2,7 @@
 .ministryContainer{
     display: flex;
     flex: 9;
-    margin-top: 100px;
+    margin: 200px;
     gap: 25px;
     justify-content: center;
     flex-wrap: wrap;

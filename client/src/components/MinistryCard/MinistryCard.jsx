@@ -6,13 +6,14 @@ const MinistryCard = (props) => {
     const navigate = useNavigate()
 
     const handleClick = () => {
-        navigate(`/ministry/${props.name}`)
+        navigate(`/ministry/${props.id}`)
     }
 
+    console.log(props.image)
     return(
         <div onClick={handleClick} className={styles.cardContainer}>
             <div className={styles.imgContainer}>
-                <img className={styles.ministryImg} src={props.img} alt={props.name} />
+                <img className={styles.ministryImg} src={props.image} alt={props.name} />
             </div>
             <div className={styles.cardText}>
                 <span className={styles.ministryName}>{props.name}</span>

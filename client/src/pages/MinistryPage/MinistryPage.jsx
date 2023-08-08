@@ -1,19 +1,42 @@
 import { useParams } from "react-router-dom"
 import Banner from "../../components/Banner/Banner"
 import BrowseImg from '../../common/images/browse-page-image.jpeg'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import PersonCard from "../../components/PersonCard/PersonCard"
 import styles from './ministrypage.module.css'
 import EventCard from "../../components/EventCard/EventCard"
+import {API_KEY,SHEET_ID,MINISTRY_SHEET} from '../../constants'
 
 const MinistryPage = () => {
 
-    const ministryId = useParams()
+    const ministryId = parseInt(useParams().id)
+
+    const [ministryData,setMinistryData] = useState({id:'',abbreviation:'',minName:'',denomination:'', website:'',bannerImg:'', description:''})
+    const [events, setEvents] = useState([])
+    const [contacts, setContacts] = useState([])
+
+    useEffect(() => {
+        const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${MINISTRY_SHEET}!A${ministryId+1}:G${ministryId+1}?valueRenderOption=FORMATTED_VALUE&key=${API_KEY}`
+        fetch(url)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            const minData = data.values
+            console.log(minData[0])
+            setMinistryData({
+                id:minData[0][0],
+                abbreviation:minData[0][1],
+                minName:minData[0][2],
+                denomination:minData[0][3],
+                bannerImg:minData[0][4],
+                website:minData[0][5],
+                description:minData[0][6],
+            })
+        })
+    },[])
+
     const [data, setData] = useState({
-        minName:ministryId.id,
-        denomination: 'prebyterian',
-        bannerImg: BrowseImg,
-        description:" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit esse quam veniam nisi ea labore, atque voluptatibus aperiam beatae sequi inventore sapiente a fugit laboriosam consequatur, ullam animi velit laborum hic tempore magnam pariatur quidem. Veniam minima dolore ab autem exercitationem, aut placeat, adipisci architecto impedit quod deserunt laudantium alias sunt? Nemo magni fuga consectetur pariatur aperiam fugiat sequi minima quia assumenda aliquid velit maiores odio accusamus rerum placeat voluptas laborum dignissimos, eaque, iure quidem perferendis accusantium! Saepe eum similique vitae alias a dolorum reiciendis at! Optio, provident exercitationem velit molestiae error, totam, animi mollitia ut odit id amet? Placeat.",
         staff: [
             {
                 name:'Curtis Shields',
@@ -57,13 +80,14 @@ const MinistryPage = () => {
         <>        
             <div>
                 <Banner 
-                    title={data.minName}
-                    subtitle={data.denomination}
-                    photo = {data.bannerImg}
+                    title={ministryData.abbreviation}
+                    subtitle={ministryData.minName}
+                    optionalSubtitle={ministryData.denomination}
+                    photo = {ministryData.bannerImg}
                 />
 
                 <h1 className={styles.sectionTitle}>Description</h1>
-                <p className={styles.description}>{data.description}</p>
+                <p className={styles.description}>{ministryData.description}</p>
 
                 <h1 className={styles.sectionTitle}>Events</h1>
                 <div className={styles.eventContainer}>
