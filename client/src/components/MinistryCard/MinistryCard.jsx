@@ -9,7 +9,6 @@ const MinistryCard = (props) => {
         navigate(`/ministry/${props.id}`)
     }
 
-    console.log(props.image)
     return(
         <div onClick={handleClick} className={styles.cardContainer}>
             <div className={styles.imgContainer}>
