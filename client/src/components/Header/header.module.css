@@ -48,3 +48,13 @@ li{
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+
+@media screen and (max-width: 768px) {
+    .headerEl{
+        color: white;
+        position: relative;
+        text-decoration: none;
+        font-size: 18px;
+    }
+}

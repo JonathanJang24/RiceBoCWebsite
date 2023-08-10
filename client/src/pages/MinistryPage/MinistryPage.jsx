@@ -42,7 +42,7 @@ const MinistryPage = () => {
         })
         .then(data => {
             const mappedContacts = []
-            const filteredContacts = data.values.filter((c)=>c[0]==String(ministryId))
+            const filteredContacts = data.values.filter((c)=>c[0]===String(ministryId))
             for (var cidx in filteredContacts){
                 mappedContacts.push({
                     id:cidx,
@@ -56,15 +56,15 @@ const MinistryPage = () => {
             setContacts(mappedContacts)
         })
 
-        //for contact data
+        //for event data
         const eventUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${EVENT_SHEET}!A2:Z1000?valueRenderOption=FORMATTED_VALUE&key=${API_KEY}`
-        fetch(peopleUrl)
+        fetch(eventUrl)
         .then(response => {
             return response.json()
         })
         .then(data => {
             const mappedEvents = []
-            const filteredEvents = data.values.filter((e)=>e[0]==String(ministryId))
+            const filteredEvents = data.values.filter((e)=>e[0]===String(ministryId))
             for (var eidx in filteredEvents){
                 mappedEvents.push({
                     id:eidx,
@@ -76,32 +76,8 @@ const MinistryPage = () => {
             }
             setEvents(mappedEvents)
         })
+    },[ministryId])
 
-        //for event data
-    },[])
-
-    const [data, setData] = useState({
-        events: [
-            {
-                name:'Large Group',
-                startTime: '5:30pm',
-                endTime:'7:00pm',
-                dayOfWeek:'Monday'
-            },
-            {
-                name:"Men's Bible Study",
-                startTime: '12:30pm',
-                endTime:'2:00pm',
-                dayOfWeek:'Tuesday'
-            },
-            {
-                name:'Fun Friday',
-                startTime: '7:30pm',
-                endTime:'10:00pm',
-                dayOfWeek:'Friday'
-            }
-        ]
-    })
     
     return (
         <>        
@@ -112,13 +88,16 @@ const MinistryPage = () => {
                     optionalSubtitle={"Denomination: "+ministryData.denomination}
                     photo = {ministryData.bannerImg}
                 />
-<a href={ministryData.website}>{ministryData.website}</a>
+
+                <div className={styles.websiteContainer}>
+                    <a href={ministryData.website}>{ministryData.website}</a>
+                </div>
                 <h1 className={styles.sectionTitle}>Description</h1>
                 <p className={styles.description}>{ministryData.description}</p>
                 
                 <h1 className={styles.sectionTitle}>Events</h1>
                 <div className={styles.eventContainer}>
-                    {data.events.map((event) => {
+                    {events.map((event) => {
                         return(
                             <EventCard
                                 key={event.name}

@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 70%;
+    width: 75%;
     font-size: 25px;
 
 }
@@ -21,4 +21,13 @@
     padding: 5px;
     background: #8AE1FC ;
     width: fit-content;
+}
+
+.repoLink{
+    display: inline;
+    color: #63458A;
+    transition: color .25s linear
+}
+.repoLink:hover{
+    color: #B288C0
 }

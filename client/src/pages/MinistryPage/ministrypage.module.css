@@ -11,6 +11,11 @@
     margin: 25px;
 }
 
+.websiteContainer{
+    text-align: center;
+    margin: 50px;
+}
+
 .eventContainer{
     margin: 0 0 100px 0;
     display: flex;

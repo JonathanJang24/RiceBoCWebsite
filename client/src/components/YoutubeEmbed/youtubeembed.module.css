@@ -12,3 +12,21 @@
     width: 600px;
     position: absolute;
   }
+
+@media screen and (max-width: 768px) {
+  
+  .videoResponsive {
+    overflow: hidden;
+    position: relative;
+    width: 400px;
+    height: 300px
+  }
+  
+.videoResponsive iframe {
+    left: 0;
+    top: 0;
+    height: 300px;
+    width: 400px;
+    position: absolute;
+  }
+}
