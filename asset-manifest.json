@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.5cd44825.css",
-    "main.js": "/static/js/main.a912b7a5.js",
-    "static/media/home-page-image.jpg": "/static/media/home-page-image.aacffb560104ad4128d7.jpg",
-    "static/media/about-page-image.jpg": "/static/media/about-page-image.685619b45b4a90692a27.jpg",
-    "static/media/browse-page-image.jpeg": "/static/media/browse-page-image.efe00f192d0c179c9f35.jpeg",
-    "static/media/contact-page-image.jpg": "/static/media/contact-page-image.573ea5731270fb7001ff.jpg",
-    "index.html": "/index.html",
-    "main.5cd44825.css.map": "/static/css/main.5cd44825.css.map",
-    "main.a912b7a5.js.map": "/static/js/main.a912b7a5.js.map"
+    "main.css": "/RiceBoCWebsite/static/css/main.5cd44825.css",
+    "main.js": "/RiceBoCWebsite/static/js/main.27b00778.js",
+    "static/media/home-page-image.jpg": "/RiceBoCWebsite/static/media/home-page-image.aacffb560104ad4128d7.jpg",
+    "static/media/about-page-image.jpg": "/RiceBoCWebsite/static/media/about-page-image.685619b45b4a90692a27.jpg",
+    "static/media/browse-page-image.jpeg": "/RiceBoCWebsite/static/media/browse-page-image.efe00f192d0c179c9f35.jpeg",
+    "static/media/contact-page-image.jpg": "/RiceBoCWebsite/static/media/contact-page-image.573ea5731270fb7001ff.jpg",
+    "index.html": "/RiceBoCWebsite/index.html",
+    "main.5cd44825.css.map": "/RiceBoCWebsite/static/css/main.5cd44825.css.map",
+    "main.27b00778.js.map": "/RiceBoCWebsite/static/js/main.27b00778.js.map"
   },
   "entrypoints": [
     "static/css/main.5cd44825.css",
-    "static/js/main.a912b7a5.js"
+    "static/js/main.27b00778.js"
   ]
 }
