@@ -7,7 +7,6 @@
     text-align: center;
     width: 75%;
     font-size: 25px;
-
 }
 
 .bolden{
@@ -30,4 +29,13 @@
 }
 .repoLink:hover{
     color: #B288C0
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        font-size: 4vw;
+    }
+    .sectionTitle{
+        font-size: 8vw;
+    }
 }

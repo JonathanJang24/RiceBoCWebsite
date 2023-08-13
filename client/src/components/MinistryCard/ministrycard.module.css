@@ -3,7 +3,7 @@
     border: 1px solid black;
     border-radius: 10px;
     background-color: rgb(238, 238, 238);
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .cardContainer:hover{
     cursor: pointer;
@@ -15,7 +15,10 @@
 }
 
 .imgContainer{
-    overflow: hidden
+    overflow: hidden;
+    border-radius: 10px;    
+    text-align: center;
+    object-fit:cover;
 }
 
 .cardText{
@@ -26,14 +29,27 @@
 
 .ministryImg{
     width: 100%;
-    object-fit: cover;
     height: 250px;
 }
 
 .ministryName{
     font-size: 25px;
+    text-align: center;
 }
 
 .denomination{
     font-size: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px)  {
+    .cardContainer{
+        width: 100%
+    }
+    .ministryImg{
+        height: auto
+    }
+    .ministryName, .denomination{
+        font-size: 15px;
+    }
 }

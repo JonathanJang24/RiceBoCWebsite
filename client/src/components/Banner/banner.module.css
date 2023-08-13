@@ -36,3 +36,15 @@
     object-fit: cover;
     filter: brightness(50%);
 }
+
+@media screen and (max-width: 768px)  {
+    .bannerTitleLg{
+        font-size: 50px;
+    }
+    .bannerTitleSm{
+        font-size: 15px;
+    }
+    .bannerTitleExSm{
+        font-size: 15px;
+    }
+}

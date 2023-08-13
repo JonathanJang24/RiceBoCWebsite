@@ -54,3 +54,11 @@
 .loading{
     background: blue;
 }
+
+@media screen and (max-width: 768px) {
+    .container{
+        font-size: 4vw;
+        margin: 50px auto;
+        text-align: center;
+    }
+}

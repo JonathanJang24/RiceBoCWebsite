@@ -7,3 +7,8 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+
+@media screen and (max-width: 768px)  {
+ 
+    .ministryContainer{   margin: 100px 10%}
+}
